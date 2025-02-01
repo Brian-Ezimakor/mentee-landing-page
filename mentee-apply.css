@@ -1,0 +1,1121 @@
+:root {
+--pmain: #a25f2d;
+--psurface: #fbfbfb;
+--pborder: #ecdfd5;
+--phover: #874f26;
+--ppressed: #36200f;
+--pfocus: #b17a50;
+--pcorretborder: #fff5e4;
+
+--smain: #36200f;
+--ssurface: #d7d2cf;
+--sborder: #bcb5af;
+--shover: #24150a;
+--spressed: #201309;
+--sfocus: #d7d2cf;
+}
+
+html, body {
+font-family: Poppins, sans-serif;
+width: 100%;
+height: 100%;
+margin: 0px;
+padding: 0px;
+overflow-x: hidden;
+scroll-behavior: smooth;
+user-select: none;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+outline: none;
+transition: all 0.2s ease-in;
+scroll-behavior: smooth;
+}
+
+body {
+overflow-x: visible;
+}
+
+header {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+gap: 0;
+background-color: rgba(255, 255, 255, 0.062);
+backdrop-filter: blur(4px);
+padding-left: 75px;
+padding-right: 65px;
+justify-content: space-between;
+width: 100%;
+height: 95px;
+z-index: 300;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+overflow: hidden;
+}
+
+.logo-container, .button-container {
+padding-top: 0.9rem;
+padding-bottom: 0.9rem;
+}
+
+.logo {
+height: 76px;
+width: 150px;
+aspect-ratio: 6 / 9;
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: cover;
+}
+
+.links {
+display: flex;
+flex-direction: row;
+gap: 32px;
+font-size: 15px;
+height: 100%;
+align-items: center;
+}
+
+.links a:not(.active) {
+cursor: pointer;
+letter-spacing: 0.8px;
+/* color: black; */
+color: white;
+}
+
+.links a {
+text-align: center;
+}
+
+.links a:hover {
+color: #a25f2d;
+/* font-weight: bold; */
+}
+
+.active {
+color: #a25f2d;
+text-decoration: #a25f2d underline;
+text-underline-offset: 4px;
+font-weight: bold;
+}
+
+.button {
+background-color: #a25f2d;
+color: white;
+border: 1px solid transparent;
+padding: 14px 35px;
+border-radius: 28px;
+font-size: 16px;
+cursor: pointer;
+z-index: 2;
+}
+
+.button:hover {
+background-color: transparent;
+border: 1px solid #fdfdfd;
+color: white;
+}
+
+.button2 {
+background-color: transparent;
+border: 1px solid #fdfdfd;
+padding: 14px 35px;
+border-radius: 28px;
+font-size: 16px;
+/* color: #a25f2d; */
+color: white;
+/* font-weight: bold; */
+/* transition:  all 0.7s ease-in; */
+cursor: pointer;
+z-index: 2;
+}
+
+.button2:hover {
+background-color: #a25f2d;
+color: white;
+border: 1px solid transparent;
+}
+
+.cta:hover {
+background-color: transparent;
+border: 1px solid #000000;
+color: #000000;
+}
+
+.menu-bar {
+display: none;
+}
+
+.menu-bar div {
+height: 3px;
+width: 24px;
+background-color: #a25f2d;
+transition: .45;
+position: relative;
+right: -1px;
+border-radius: 50px;
+cursor: pointer;
+}
+
+.menu-bar div:not(:last-child) {
+margin-bottom: 5px;
+}
+
+.menuAccordion {
+height: 100%;
+width: 90%;
+position: fixed;
+top: 0;
+bottom: 0;
+background-color: white;
+z-index: 10000;
+right: -700px;
+overflow: hidden;
+transition: 0.5s;
+display: none;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+body.activeSlide .menuAccordion {
+right: 0;
+}
+
+.menuHeader {
+padding: 0.9rem;
+padding-left: 14px;
+padding-right: 21px;
+/* background-color: rgb(250, 250, 250); */
+height: 70px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+font-weight: bold;
+}
+
+.menuHeader p {
+font-size: 22px;
+color: #36200f;
+}
+
+.menu-cross div {
+height: 3.5px;
+width: 26px;
+background-color: #874f26;
+transition: .45;
+position: relative;
+border-radius: 50px;
+cursor: pointer;
+}
+
+.one {
+transform: rotate(132deg);
+position: relative;
+background-color: white;
+top: 3px;
+}
+
+.twO {
+transform: rotate(-132deg);
+position: relative;
+}
+
+.goto {
+display: flex;
+flex-direction: column;
+gap: 24px;
+padding-left: 24px;
+padding-top: 36px;
+padding-bottom: 28px;
+}
+
+.goto a {
+font-size: 18px;
+font-weight: bold;
+color: #874f26;
+text-underline-offset: 4px;
+}
+
+.goto a:hover {
+text-decoration: 3px solid #874f26 underline; 
+}
+
+.btns {
+padding-inline: 24px;
+display: flex;
+flex-wrap: wrap;
+gap: 32px;
+}
+
+.btns .button {
+width: 100%;
+text-align: center;
+}
+
+.accord {
+text-align: center;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+h1, h2, h3, h4 {
+text-wrap: balance;
+font-family: "Inter", sans-serif;
+z-index: 2;
+}
+
+p {
+text-wrap: pretty;
+}
+
+a {
+color: white;
+}
+
+.hero {
+background-image: url("Charlotte.jpg");
+background-color: white;
+color: white;
+object-fit: cover;
+background-size: cover;
+object-position: center;
+background-repeat: none;
+height: 100svh;
+padding-top: 180px;
+padding-left: 75px;
+z-index: 1;
+}
+
+.hero h1, .ctaheader {
+font-size: 55px;
+letter-spacing: 2px;
+line-height: 62px;
+z-index: 2;
+max-width: 25ch;
+padding-right: 140px;
+}
+
+h1:not(.ctaheader) {
+font-size: 51px;
+padding-bottom: 14px;
+color: #000000;
+text-align: center;
+line-height: 84px;
+z-index: 2;
+padding-inline: 100px;
+letter-spacing: 2px;
+}
+
+.overlay {
+border-image:
+linear-gradient(#0000009f, #0000009f) fill 1;
+}
+
+.hero p {
+/* text-align: center; */
+letter-spacing: 0.6px;
+padding-top: 14px;
+/* padding-left: 4x; */
+font-size: 17px;
+max-width: 55ch;
+line-height: 29px;
+}
+
+.hero div {
+padding-top: 40px;
+}
+
+.hero span {
+color: #a25f2d;
+z-index: 2;
+}
+
+.about {
+padding-top: 80px;
+padding-bottom: 80px;
+padding-inline: 140px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+gap: 32px;
+background-color: #ecdfd5;
+font-size: 16px;
+}
+
+.about img {
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: cover;
+height: 424px;
+width: auto;
+border-radius: 5px;
+}
+
+.about p{
+max-width: 65ch;
+}
+
+.star {
+color: yellow;
+}
+
+.about h2 {
+font-size: 51px;
+padding-bottom: 14px;
+color: #000000;
+}
+
+section p:not(:first-of-type) {
+font-size: 17px;
+padding-bottom: 12px;
+line-height: 26px;
+letter-spacing: 0.5px;
+word-spacing: 5px;
+}
+
+.customizedlink {
+font-size: 17px;
+color: #a25f2d;
+text-decoration: underline;
+letter-spacing: 0.5px;
+text-underline-offset: 0.6px;
+}
+
+.customizedlink:hover {
+color: #874f26;
+}
+
+.numbers {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.numbers div {
+text-align: center;
+}
+
+.numbers div p:not(:first-of-type) {
+font-size: 28px;
+font-weight: bold;
+}
+
+.numbers div p:first-of-type {
+font-size: 13.5px;
+margin-bottom: 8px;
+border-top: 2px solid #fff;
+padding-top: 5px;
+}
+
+.whyus {
+padding-top: 50px;
+}
+
+.top {
+padding-top: 20px;
+}
+
+.benefits {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 60px;
+padding-top: 60px;
+padding-bottom: 60px;
+padding-inline: 156px;
+}
+
+.benefits img {
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: cover;
+height: 320px;
+width: 350px;
+border-radius: 5px;
+scale: .9;
+opacity: 0;
+animation: fade linear forwards;
+animation-timeline: view();
+animation-range: 250px 390px;
+/* transition: ; */
+}
+@keyframes fade {
+    to {scale: 1;
+        opacity: 1;
+    }
+}
+
+.benefits div:not(.cta) {
+scale: .8;
+opacity: 0;
+animation: fade linear forwards;
+animation-timeline: view();
+animation-range: 250px 390px;
+}
+@keyframes fade {
+    to {scale: 1;
+        opacity: 1;
+    }
+}
+
+.benefits h2 {
+font-size: 36px;
+padding-bottom: 20px;
+color: #36200f;
+max-width: 45ch;
+}
+
+.benefits p, li {
+font-size: 18px;
+max-width: 45ch;
+line-height: 24px;
+}
+
+.benefits-p-margin-btm {
+margin-bottom: 44px;
+}
+
+.benefits ul {
+list-style-position: inside;
+margin-top: 14px;
+padding-left: 1px;
+margin-left: 1px;
+}
+
+li::marker {
+color: #36200f;
+}
+
+.paternBgc {
+background-color: #ecdfd5;
+}
+
+.networkBtn {
+margin-top: 80px;
+}
+
+.benefits-pad-add {
+padding-top: 100px;
+padding-bottom: 100px;
+}
+
+.qualifyholder {
+padding-inline: 140px;
+padding-top: 120px;
+padding-bottom: 120px;
+display: flex;
+flex-direction: row;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.qualifyholder h1 {
+text-align: center;
+margin-inline: auto;
+padding-inline: auto;
+margin-bottom: 16px;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.qualifyholder div {
+text-align: center;
+padding: 20px;
+width: 320px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.qualifyholder div p:first-of-type {
+height: 40px;
+width: 40px;
+padding: 1px;
+border-radius: 50%;
+background-color: #874f26;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-size: 17px;
+font-weight: bold;
+color: #fff;
+margin-inline: auto;
+}
+
+.testify {
+background-color: #fbfbfb;
+text-align: center;
+}
+
+.testimony {
+height: 160px;
+}
+
+.person {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 28px;
+padding-top: 96px;
+padding-bottom: 96px;
+padding-inline: 140px;
+}
+
+.person img {
+height: 160px;
+width: 160px;
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: cover;
+border-radius: 50%;
+transition: none;
+}
+
+.person p:first-of-type {
+font-size: 23px;
+/* transition: 0.3s; */
+}
+
+.person p:not(:first-of-type) {
+font-size: 18px;
+/* transition: 0.3s; */
+}
+
+.quote {
+font-size: 30px;
+font-weight: bold;
+}
+
+.prev, .next {
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 20px;
+border-radius: 50%;
+background-color: #874f26;
+height: 56px;
+width: 56px;
+color: #fff;
+font-weight: bold;
+}
+
+.prev:hover, .next:hover {
+cursor: pointer;
+}
+
+.carousels {
+display: flex;
+flex-direction: row;
+gap: 36px;
+}
+
+.faqs{
+padding-top: 96px;
+padding-bottom: 96px;
+padding-inline: 140px;
+/* background-color: red; */
+}
+
+#mycheck:checked ~ .a {
+display: block;
+}
+
+.ans {
+display: none;
+padding: 30px 35px;
+}
+
+#mycheck {
+display: none;
+}
+
+#mycheck1:checked ~ .b {
+display: block;
+}
+
+#mycheck1 {
+display: none;
+}
+
+#mycheck2:checked ~ .c {
+display: block;
+}
+
+#mycheck2 {
+display: none;
+}
+
+#mycheck3:checked ~ .d {
+display: block;
+}
+
+#mycheck3 {
+display: none;
+}
+
+#mycheck4:checked ~ .e {
+display: block;
+}
+
+#mycheck4 {
+display: none;
+}
+
+#mycheck5:checked ~ .f {
+display: block;
+}
+
+#mycheck5 {
+display: none;
+}
+
+#mycheck6:checked ~ .g {
+display: block;
+}
+
+#mycheck6 {
+display: none;
+}
+
+#mycheck7:checked ~ .h {
+display: block;
+}
+
+#mycheck7 {
+display: none;
+}
+
+#mycheck8:checked ~ .i {
+display: block;
+}
+
+#mycheck8 {
+display: none;
+}
+
+#mycheck9:checked ~ .j {
+display: block;
+}
+
+#mycheck9 {
+display: none;
+}
+
+label {
+border-top: 1px solid grey;
+border-bottom: 1px solid grey;
+padding: 28px 32px;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+cursor: pointer;
+}
+
+label span {
+color: #874f26;
+font-weight: bold;
+}
+
+.ans a {
+color: #874f26;
+}
+
+footer {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding-inline: 110px;
+padding-top: 100px;
+padding-bottom: 40px;
+gap: 44px;
+}
+
+footer a {
+color: black;
+}
+
+.pic-social {
+display: flex;
+flex-direction: column;
+gap: 32px;
+}
+
+.social {
+display: flex;
+flex-direction: row;
+gap: 24px;
+}
+
+.social a {
+border-radius: 50%;
+background-color: #a25f2d;
+border: 1px solid transparent;
+padding: 16px;
+height: 45px;
+width: 45px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+color: white;
+}
+
+.social a:hover {
+background-color: transparent;
+border: 1px solid #000000;
+color: #000000;
+}
+
+.footerheaders {
+color: #36200f;
+}
+
+.footerlinks {
+display: flex;
+flex-direction: column;
+gap: 16px
+}
+
+.footercta p {
+margin-bottom: 40px;
+max-width: 45ch;
+}
+
+@media screen and (max-width: 596px) {
+    header {
+        height: 75px;
+        padding-top: 10px;
+        padding-left: 23px;
+        padding-right: 28px;
+    }
+
+    .hero h1, .ctaheader {
+        padding-inline: 15px;
+        font-size: 32px;
+        text-align: center;
+        line-height: 33px;
+        max-width: 100%;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .menuAccordion {
+        display: block;
+    }
+
+    .menu-bar {
+        display: block;
+    }
+
+    .cba {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 189px;
+        text-align: center;
+        background-position: center;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .hero p {
+        font-size: 16px;
+        padding-inline: 18px;
+        padding-top: 14px;
+        line-height: 25px;
+    }
+
+    .hero div {
+        padding-top: 36px;
+    }
+        
+    h1:not(.ctaheader), .about h2 {
+        font-size: 32px;
+        padding-bottom: 10px;
+        line-height: 48px;
+        padding-inline: 0;
+        margin-inline: 0;
+    }         
+
+    .about, .benefits, .qualifyholder, .whatwedo, .numbers, .person, .faqs {
+        padding-inline: 15px;
+    }
+
+    .button {
+        padding: 13px 33px; 
+    }
+
+    .about {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        row-gap: 48px;
+    }
+
+    .benefits {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 30px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .benefits h2 {
+        font-size: 26px;
+        padding-bottom: 17px;
+        max-width: 45ch;
+    }
+    
+    .benefits p, li {
+        font-size: 17px;
+        line-height: 22px;
+    }
+
+    .benefits img {
+        width: 100%;
+        padding-inline: auto;
+        height: 370px;
+    }
+
+    .qualifyholder {
+        padding-top: 80px;
+        padding-bottom: 110px;
+        text-align: center;
+    }
+
+    .qualifyholder div {
+        width: 100%;
+        padding: 16px;
+    }
+
+    footer {
+        padding-top: 30px;
+        padding-inline: 22px;
+    }
+
+    .testimony {
+        height: 185px;
+    }
+    
+    footer a {
+        color: black;
+    }
+        
+    .person {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .person p:first-of-type {
+        font-size: 18px;
+        margin-bottom: 38px;
+    }
+
+    .quote {
+        font-size: 23px
+    }
+
+    .ans {
+        padding: 28px 32px;
+    }        
+
+    .faqs{
+        padding-top: 90px;
+        padding-bottom: 75px;
+    }        
+    
+    .prev, .next {
+        height: 51px;
+        width: 51px;
+        padding: 18px;
+    }
+
+    .about, .do {
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .benefits-p-margin-btm {
+        margin-bottom: 24px;
+    }
+
+    .networkPush {
+        margin-bottom: 36px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and ( max-width: 820px) {
+    
+    .menuAccordion {
+        display: block;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .menu-bar {
+        display: block;
+    }
+
+    .cba {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 210px;
+        text-align: center;
+        margin-inline: auto;
+        padding-inline: 10px;
+        background-position: center;
+    }
+
+    h1 {
+        margin-inline: auto;
+        font-size: 40px;
+        line-height: 38px;
+    }
+
+    .hero p {
+        max-width: 37ch;
+        margin-inline: auto;
+        text-align: center;
+        float:none;
+        padding-inline: 0;
+    }
+
+    h1:not(.ctaheader), .about h2 {
+        font-size: 30px;
+        padding-bottom: 10px;
+    }         
+
+    .person {
+        padding-top: 65px;
+        padding-bottom: 76px;
+    }
+
+    .about, .benefits, .qualifyholder, .whatwedo, .numbers, .person, footer {
+        padding-inline: 46px;
+    }
+
+    .benefits h2 {
+        font-size: 24px;
+    }
+
+    footer {
+        padding-inline: 38px;
+    }
+
+    .menuAccordion {
+        width: 60%;
+    }        
+
+    .social a {
+        height: 42px;
+        width: 42px;
+    }
+
+    .social {
+        gap: 20px;
+    }
+}
+
+
+@media screen and (min-width: 853px) and (max-width: 915px) {
+    header {
+        padding-left: 16px;
+        padding-right: 18px;
+    }
+    
+    .links {
+        display: none;
+    }
+
+    .menuAccordion {
+        display: block;
+    }
+
+    .menu-bar {
+        display: block;
+    }
+
+    .cba {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 300px;
+        background-position: center;
+        height: 840px;
+    }
+
+    .picture h2 {
+        margin-inline: auto;
+        font-size: 52px;
+    }
+
+    .picture p {
+        max-width: 40ch;
+        margin-inline: auto;
+        text-align: center;
+        float: none;
+        padding-inline: 0;
+    }
+
+    .about, .benefits, .whatwedo, .numbers, .person, footer {
+        padding-inline: 30px;
+    }
+
+    .qualifyholder {
+        padding-inline: auto;
+    }
+
+    .qualifyholder div {
+        width: 300px;
+        padding: 16px;
+        margin-inline: auto;
+    }
+
+    .qualifyholder h1 {
+        padding-inline: 0;
+    }
+
+    .prove {
+        width: 100%;
+    }
+
+    .menuAccordion {
+        width: 55%;
+    }     
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        padding-left: 10px;
+        padding-right: 15px;
+    }
+}
